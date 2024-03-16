@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 
 export default function App() {
-  
+
+  // estados
   const [primeiroValor, setPrimeiroValor] = useState();
-
   const [segundoValor, setSegundoValor] = useState();
-
   const [resultado, setResultado] = useState(0);
-
   const [cor, setCor] = useState();
 
   // captura de valores
@@ -41,6 +39,8 @@ export default function App() {
   useEffect(() => {
 
     // forma mais dificil
+    // nessa forma estamos transformando o resultado do cálculo do tipo
+    // númerico para o tipo string e na condicional comparando 
     const primeiroDigito = resultado.toString() 
 
     if(primeiroDigito[0]=== "1"){
@@ -92,6 +92,9 @@ export default function App() {
 
   return (
     <>
+    {/* Aqui estamos modificando a cor de fundo através do DOM o useEffect muda o valor
+        do estado cor conforme o resultado do cálculo que será comparado pelo if/else
+    */}
       <div style={{backgroundColor:`${cor}`}}>
         
         <input type="number" onChange={capturarPrimeiroValor} />
